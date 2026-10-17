@@ -4,7 +4,7 @@ import QtQuick
 Item {
 	anchors.top: parent.top  	
 	anchors.horizontalCenter: parent.horizontalCenter
-	anchors.topMargin: 20
+	anchors.topMargin: 25
 	SystemClock {
 		id: sysclock
 		precision: SystemClock.Seconds
@@ -21,7 +21,7 @@ Item {
 	}
 	Text {
 		anchors.top: time.bottom
-		anchors.topMargin: 6
+		anchors.topMargin: 15
 		anchors.horizontalCenter: parent.horizontalCenter
 		text: {Qt.formatDateTime(sysclock.date, "ddd MMM | dd/MM/yyyy")}
 		font.bold: true

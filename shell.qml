@@ -1,4 +1,4 @@
-
+//@ pragma UseQApplication
 import QtQuick
 import Quickshell
 import Quickshell.Wayland
@@ -18,7 +18,7 @@ ShellRoot {
     }
 
 }
-/* PanelWindow {
+/*PanelWindow {
 	anchors {
 		top: true;
 		bottom: true;
@@ -26,5 +26,4 @@ ShellRoot {
 		right: true
 	}
 	color: "black"
-}
- */
+}*/

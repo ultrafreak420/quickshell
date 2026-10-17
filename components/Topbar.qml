@@ -22,9 +22,16 @@ Scope {
 		mask: Region {
 			item: dock
 			intersection: Intersection.Intersect
+			Region {
+				item: tray
+				intersection: Intersection.Combine
+			}
 		}
 		Dock {
 			id: dock
+		}
+		SysTray {
+			id: tray
 		}
 	}
 }

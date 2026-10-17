@@ -14,25 +14,47 @@ ClippingRectangle {
     anchors.horizontalCenter: parent.horizontalCenter
     //hear we want the height to change if it's being hovered over
     implicitWidth: 500
-    implicitHeight: hoverometer.containsMouse ? 150 : 45
     radius: 45 / 2
     border.width: 2
     border.color: "#D6296B"
     color: "#1A0713"
+    state: hoverometer.dockheight
+    states: [
+        State {
+            name: "state1"
+
+            PropertyChanges {
+                target: rect
+                implicitHeight: 50
+                implicitWidth: 500
+            }
+
+        },
+        State {
+            name: "state2"
+
+            PropertyChanges {
+                target: rect
+                implicitHeight: 150
+                implicitWidth: 500
+            }
+        },
+    ]
 
     MouseArea {
         id: hoverometer
 
+        property string dockheight: containsMouse ? "state2" : "state1"
+
         anchors.fill: parent
-        hoverEnabled: true
+        hoverEnabled: true 
     }
 
     Clock {
     }
+
     HardStat {
     }
-	SysTray {
-	}
 
     //this is to animate the change in height
     Behavior on implicitHeight {
